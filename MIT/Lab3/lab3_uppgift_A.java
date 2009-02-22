@@ -1,3 +1,9 @@
+/*
+ * Håkan Gullstrand
+ * 12-02-22
+ * Programmet frågar efter antal
+ */
+
 import javax.swing.JOptionPane;
 
 
