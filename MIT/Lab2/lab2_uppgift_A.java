@@ -1,5 +1,12 @@
+/*
+ * Håkan Gullstrand
+ * 04-02-09
+ * Programmet frågar efter köp belopp och summa användaren betalde med
+ * sedan räknar vi ut hur mycket växel och i vilka valörer dessa ska betalas
+ * tillbaka med.
+ */
+
 import javax.swing.*;
-import java.awt.*;
 
 public class lab2_uppgift_A {
 
@@ -7,26 +14,32 @@ public class lab2_uppgift_A {
 		
 		int hundra, femtio, tjugo, tio, fem, en = 0; //deklarerar och initsierar variabler
 		
-		//FÃ¥rgar efter belopp och och subtraherar detta ifrÃ¥n beloppet som betals in fÃ¶r att fÃ¥ ut vad personen ska fÃ¥ tillbaka
-		String stal1 = JOptionPane.showInputDialog("Ange vilket belopp du handlat fÃ¶r (max 999)");
-		int ital1 = Integer.parseInt(stal1);
-		String stal2 = JOptionPane.showInputDialog("Ange vilket belopp du betalar med (max 999)");
-		int ital2 = Integer.parseInt(stal2);
-		int isumma = ital2 - ital1;
-		JOptionPane.showMessageDialog(null, "Din vÃ¤xel ska bli : "+isumma+"\nTryck pÃ¥ ok sÃ¥ fÃ¥r du se vilka valÃ¶rer du ska fÃ¥ tillbaka");
+		//Ta reda på hur mycket användaren handlat för
+		String sTal1 = JOptionPane.showInputDialog("Ange vilket belopp du handlat för (max 999)");
+		int iTal1 = Integer.parseInt(sTal1);
 		
-		//Kollar hur mÃ¥nga gÃ¥nger vart vÃ¤rde gÃ¥r i den nya summan och sparar det i respektvie variabel och presenterar det sedan
-		hundra = isumma/ 100;
-		isumma = isumma  % 100;
-		femtio = isumma / 50;
-		isumma = isumma % 50;
-		tjugo = isumma / 20;
-		isumma = isumma % 20;
-		tio = isumma / 10;
-		isumma = isumma % 10;
-		fem = isumma / 5;
-		isumma = isumma % 5;
-		en = isumma / 1;
+		//Ta reda på hur mycket avändaren betalade till kassören
+		String sTal2 = JOptionPane.showInputDialog("Ange vilket belopp du betalar med (max 999)");
+		int iTal2 = Integer.parseInt(sTal2);
+		
+		//Räkna ut och berätta hur mycket användaren ska få tillbaka
+		int iSumma = iTal2 - iTal1;
+		JOptionPane.showMessageDialog(null, "Din växel ska bli : "+iSumma+"\nTryck på ok så får du se vilka valörer du ska få tillbaka");
+		
+		//Kollar hur många gånger vart värde går i den nya summan och sparar det i respektvie variabel och presenterar det sedan
+		hundra = iSumma/ 100;
+		iSumma = iSumma  % 100;
+		femtio = iSumma / 50;
+		iSumma = iSumma % 50;
+		tjugo = iSumma / 20;
+		iSumma = iSumma % 20;
+		tio = iSumma / 10;
+		iSumma = iSumma % 10;
+		fem = iSumma / 5;
+		iSumma = iSumma % 5;
+		en = iSumma / 1;
+		
+		//Visa vilka valörer för användaren
 		JOptionPane.showMessageDialog(null, "\nHundra : "+hundra+ "\nFemtio : "+femtio+"\nTjugo : "+tjugo+"\nTio : "+tio+"\nFem : "+fem+"\nEn : "+en);
 		System.exit(0);
 	}
