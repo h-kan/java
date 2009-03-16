@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="Lab3"/>
 	<classpathentry kind="src" path="Lab4"/>
 	<classpathentry kind="src" path="Lab5"/>
+	<classpathentry kind="src" path="Lab6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="Lab3"/>
 </classpath>
